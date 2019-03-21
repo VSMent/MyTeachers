@@ -1,4 +1,5 @@
-import React, {Fragment} from 'react';
+import React from 'react';
+import { Table } from 'reactstrap';
 import TeacherComp from './TeacherComp';
 
 class TeachersListComp extends React.Component{
@@ -8,10 +9,20 @@ class TeachersListComp extends React.Component{
     }
     render(){
         return (
-            <Fragment>
-                {/* {console.log(this.list.items.map((el)=>el.name))} */}
-                {this.list.items.map(teacher => <TeacherComp {...teacher}></TeacherComp>)}
-            </Fragment>
+            <Table striped>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Phone</th>
+                        <th>Subject</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {this.list.items.map(teacher => <TeacherComp {...teacher}></TeacherComp>)}
+                </tbody>
+            </Table>
         );
     }
 }

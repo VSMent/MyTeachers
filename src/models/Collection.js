@@ -3,7 +3,10 @@ class Collection{
         this.items = items || [];
     }
     addItem(item){
-        this.items.push(item);
+        const key = Math.random()
+        .toString(36)
+        .substr(2, 9);
+        this.items.push({key,...item});
     }
     // updateItem(id,updateInfo){
     //     this._items.find((el) => {

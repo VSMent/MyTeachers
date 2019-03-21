@@ -1,5 +1,6 @@
 class Teacher{
-    constructor(name,surname,phone,subject,notes){
+    constructor(key,name,surname,phone,subject,notes){
+        this.key = key;
         this.name = name;
         this.surname = surname;
         this.phone = phone;

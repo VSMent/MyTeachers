@@ -7,6 +7,7 @@ const TeachersList = new Collection([
         'phone':'55432345',
         'subject':'chemistry',
         'notes':'alcoholic',
+        'key':1
     },
     {
         'name':'taras',
@@ -14,6 +15,7 @@ const TeachersList = new Collection([
         'phone':'1123',
         'subject':'archeology',
         'notes':'hardworking',
+        'key':2
     }
 ]);
 TeachersList.addItem(
@@ -23,6 +25,7 @@ TeachersList.addItem(
         'phone':'999999',
         'subject':'mathematics',
         'notes':'enthusiastic',
+        // 'key':3
     }
 );
 
