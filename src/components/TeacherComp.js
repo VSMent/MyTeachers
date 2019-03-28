@@ -1,4 +1,5 @@
 import React /*, {Fragment}*/ from 'react';
+import { Button } from 'reactstrap';
 
 class TeacherComp extends React.Component{
     constructor(props){
@@ -15,18 +16,16 @@ class TeacherComp extends React.Component{
     }
     render(){
         return(
-            // <Fragment>
-               // {/* {console.log('props',this.props)} */}
-                // <div>
-                <tr>
-                    <td><p>{this.state.name}</p></td>
-                    <td><p>{this.state.surname}</p></td>
-                    <td><p>{this.state.phone}</p></td>
-                    <td><p>{this.state.subject}</p></td>
-                    <td><textarea className="tNotes" defaultValue={this.state.notes}></textarea></td>
-                    </tr>
-                    // </div>
-            // </Fragment>
+            <tr>
+                <td><p>{this.state.name}</p></td>
+                <td><p>{this.state.surname}</p></td>
+                <td><p>{this.state.subject}</p></td>
+                <td><p>{this.state.phone}</p></td>
+                <td>
+                    <textarea className="tNotes" readOnly defaultValue={this.state.notes}></textarea>
+                    <Button onClick={()=>{this.props.deleteTeacher(this.state.id)}} close />
+                </td>
+            </tr>
         );
     }
 }

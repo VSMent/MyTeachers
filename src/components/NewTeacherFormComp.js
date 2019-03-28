@@ -1,21 +1,23 @@
 import React from 'react';
 import { Button, Form, Label, Input, FormGroup, Col } from 'reactstrap';
-import TeacherList from '../collections/TeachersList';
+import TeachersList from '../collections/TeachersList';
 
 class NewTeacherFormComp extends React.Component{
     // constructor(props){
     //     super(props);
+    //     this.updateList = props.updateList; //todo finish update of list
     // }
     onSubmit = e =>{
         e.preventDefault();
         const form = e.currentTarget;
-        TeacherList.addItem({
+        TeachersList.addItem({
             'name':form.tName.value,
             'surname':form.tSurname.value,
             'phone':form.tPhone.value,
             'subject':form.tSubject.value,
             'notes':form.tNotes.value
         });
+        this.props.updateData();
     }
     render(){
         return(
@@ -29,7 +31,7 @@ class NewTeacherFormComp extends React.Component{
                         id="tName" 
                         placeholder="Teacher's name here.."
                         required 
-                        value="a"
+                        defaultValue="a"
                     />
                 </Col>
                 <Label for="tSurname" sm={2}>Surname*</Label>
@@ -40,7 +42,7 @@ class NewTeacherFormComp extends React.Component{
                         id="tSurname" 
                         placeholder="Teacher's surname here.."
                         required
-                        value="a"
+                        defaultValue="a"
                     />
                 </Col>
             </FormGroup>
@@ -53,7 +55,7 @@ class NewTeacherFormComp extends React.Component{
                         id="tSubject" 
                         placeholder="Teacher's subject here.."
                         required
-                        value="a"
+                        defaultValue="a"
                     />
                 </Col>
                 <Label for="tPhone" sm={2}>Phone</Label>

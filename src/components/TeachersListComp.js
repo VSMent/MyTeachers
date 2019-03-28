@@ -1,12 +1,13 @@
 import React from 'react';
 import { Table } from 'reactstrap';
 import TeacherComp from './TeacherComp';
+// import TeachersList from '../collections/TeachersList';
 
 class TeachersListComp extends React.Component{
-    constructor(props){
-        super(props);
-        this.list = props;
-    }
+    // constructor(props){
+    //     super(props);
+    //     this.state = TeachersList;
+    // }
     render(){
         return (
             <Table striped>
@@ -14,13 +15,13 @@ class TeachersListComp extends React.Component{
                     <tr>
                         <th>Name</th>
                         <th>Surname</th>
-                        <th>Phone</th>
                         <th>Subject</th>
-                        <th>Notes</th>
+                        <th>Phone</th>
+                        <th className="tNotes">Notes</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {this.list.items.map(teacher => <TeacherComp {...teacher}></TeacherComp>)}
+                    {this.props.teachers.map(teacher => <TeacherComp deleteTeacher={this.props.deleteTeacher} {...teacher}></TeacherComp>)}
                 </tbody>
             </Table>
         );
